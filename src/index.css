@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #001e62;
+  --color-accent:  #ef7225;
+  --color-link:    #006cff;
+}
+
+@theme {
+  /* Brand colors */
+  --color-prussian: #001e62;
+  --color-orange: #ef7225;
+  --color-dodger: #006cff;
+
+  /* Font families — v4 naming: --font-{name} → font-{name} utility */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+}
+
+/* Base typography */
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f0f2f7;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Inline fill-field inputs: override browser autofill yellow */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px #f8fafc inset;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Hide scrollbar on mobile nav */
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* Fillable prompt field — placeholder color */
+.fill-field::placeholder {
+  color: var(--color-link);
+  opacity: 0.7;
+  font-style: italic;
+}
+.fill-field:focus {
+  border-bottom-color: var(--color-accent) !important;
+  background: rgba(0, 108, 255, 0.04);
+  border-radius: 3px 3px 0 0;
+}
+.fill-field:focus::placeholder {
+  opacity: 0.4;
+}
