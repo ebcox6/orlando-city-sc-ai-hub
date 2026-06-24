@@ -45,21 +45,16 @@ export default function Layout({ children }) {
         <div className="max-w-[1200px] mx-auto px-5 py-2.5 flex items-center justify-between gap-4">
 
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-2 flex-shrink-0">
-            <img
-              src="/logo.png"
-              alt={config.orgName}
-              className="h-9 w-auto"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextElementSibling.style.display = 'flex';
-              }}
-            />
-            {/* Fallback text logo if image fails */}
-            <span className="hidden items-center gap-1">
-              <span className="text-orange font-poppins font-bold text-lg leading-none">i-tech</span>
-              <span className="text-dodger font-poppins text-xs font-semibold tracking-widest">ACADEMY</span>
-            </span>
+          <NavLink to="/" className="flex items-center gap-3 flex-shrink-0">
+            {(config.logos || [{ src: config.logo, alt: config.orgName }]).map((logo) => (
+              <img
+                key={logo.src}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-9 w-auto"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+            ))}
           </NavLink>
 
           {/* Search — desktop */}

@@ -1,6 +1,10 @@
 export const config = {
   orgName: "Orlando City SC",
-  logo: "/orlando-city-logo.png",
+  logo: "https://images.mlssoccer.com/image/upload/assets/logos/ORL.svg",
+  logos: [
+    { src: "https://images.mlssoccer.com/image/upload/assets/logos/ORL.svg", alt: "Orlando City SC" },
+    { src: "https://images.mlssoccer.com/image/upload/v1769445119/assets/orl/NWSL/Logos/Pride_Primary_FullColor_BlueStar_tfzd1l.png", alt: "Orlando Pride" },
+  ],
   primaryColor: "#633492",
   accentColor: "#FDE192",
   linkColor: "#633492",
