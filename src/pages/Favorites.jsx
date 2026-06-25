@@ -32,7 +32,7 @@ export default function Favorites() {
           <p className="text-slate-500 text-sm mb-4">No favorites yet. Browse the frameworks and click the heart icon on any prompt card.</p>
           <button
             onClick={() => navigate('/synapse')}
-            className="text-sm font-semibold text-prussian border border-prussian px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
+            className="text-sm font-semibold text-prussian border border-prussian px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors"
           >
             Browse prompts →
           </button>

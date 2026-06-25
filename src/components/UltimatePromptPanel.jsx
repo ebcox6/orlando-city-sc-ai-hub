@@ -102,12 +102,12 @@ export default function UltimatePromptPanel() {
         style={{ background: '#eff6ff', borderColor: '#bfdbfe' }}
       >
         <div className="flex items-start gap-2 mb-3">
-          <Info size={14} className="flex-shrink-0 mt-0.5" style={{ color: '#1d4ed8' }} />
-          <p className="text-xs font-semibold font-poppins" style={{ color: '#1e40af' }}>
+          <Info size={14} className="flex-shrink-0 mt-0.5" style={{ color: '#633492' }} />
+          <p className="text-xs font-semibold font-poppins" style={{ color: '#633492' }}>
             After AI generates your prompt, paste this follow-up:
           </p>
         </div>
-        <p className="text-xs text-blue-800 leading-relaxed font-nunito mb-3 pl-5">
+        <p className="text-xs text-prussian leading-relaxed font-nunito mb-3 pl-5">
           &ldquo;{SELF_CHECK}&rdquo;
         </p>
         <div className="pl-5">
@@ -119,7 +119,7 @@ export default function UltimatePromptPanel() {
             className={`text-xs font-semibold px-3 py-1.5 rounded-lg border-[1.5px] transition-all font-nunito ${
               followUpCopied
                 ? 'border-emerald-600 text-emerald-700 bg-emerald-50'
-                : 'border-blue-300 text-blue-700 bg-white hover:bg-blue-50'
+                : 'border-prussian text-prussian bg-white hover:bg-purple-50'
             }`}
           />
         </div>

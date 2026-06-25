@@ -42,7 +42,7 @@ function AgentCallout({ division, role }) {
   return (
     <Link
       to="/agents"
-      className="flex items-center justify-between gap-3 bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 mb-4 hover:bg-blue-100 transition-colors group"
+      className="flex items-center justify-between gap-3 bg-purple-50 border border-purple-200 rounded-xl px-4 py-3 mb-4 hover:bg-purple-100 transition-colors group"
     >
       <div className="flex items-center gap-2.5">
         <span className="text-base leading-none">🤖</span>
@@ -298,7 +298,7 @@ export default function Library() {
             <p className="text-slate-400 font-nunito text-sm">No prompts match your filters.</p>
             <button
               onClick={handleClear}
-              className="mt-3 text-xs font-semibold font-nunito text-dodger hover:underline"
+              className="mt-3 text-xs font-semibold font-nunito text-prussian hover:underline"
             >
               Clear all filters
             </button>

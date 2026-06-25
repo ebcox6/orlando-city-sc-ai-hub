@@ -49,7 +49,7 @@ export default function History() {
           <p className="text-slate-500 text-sm mb-4">No history yet. Use the Copy, ChatGPT, or Claude buttons on any prompt to track your activity.</p>
           <button
             onClick={() => navigate('/')}
-            className="text-sm font-semibold text-prussian border border-prussian px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
+            className="text-sm font-semibold text-prussian border border-prussian px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors"
           >
             Get started →
           </button>
@@ -79,7 +79,7 @@ export default function History() {
                   onClick={async () => {
                     await navigator.clipboard.writeText(entry.text);
                   }}
-                  className="text-xs font-semibold px-3 py-1 border border-prussian text-prussian rounded-lg hover:bg-blue-50 transition-colors"
+                  className="text-xs font-semibold px-3 py-1 border border-prussian text-prussian rounded-lg hover:bg-purple-50 transition-colors"
                 >
                   Copy again
                 </button>

@@ -132,7 +132,7 @@ export default function InfographicCard({ src, title, description }) {
         {/* View button */}
         <button
           onClick={() => setOpen(true)}
-          className="flex items-center justify-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg border-[1.5px] border-prussian text-prussian bg-white hover:bg-blue-50 transition-all font-nunito w-full mt-auto"
+          className="flex items-center justify-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg border-[1.5px] border-prussian text-prussian bg-white hover:bg-purple-50 transition-all font-nunito w-full mt-auto"
         >
           <Maximize2 size={12} />
           View Infographic

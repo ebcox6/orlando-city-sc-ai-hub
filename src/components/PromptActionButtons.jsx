@@ -91,7 +91,7 @@ function ShareButton({ shareUrl }) {
       onClick={handleShare}
       className={`flex items-center justify-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-lg border-[1.5px] transition-all font-nunito w-full sm:w-auto sm:ml-auto ${
         shareMsg
-          ? 'border-dodger text-dodger bg-blue-50'
+          ? 'border-prussian text-prussian bg-purple-50'
           : 'border-slate-300 text-slate-500 bg-white hover:bg-slate-50'
       }`}
     >
@@ -126,7 +126,7 @@ export default function PromptActionButtons({ getText, onAction, shareUrl, wrapp
         className={`flex items-center justify-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-lg border-[1.5px] transition-all font-nunito w-full sm:w-auto ${
           copied
             ? 'border-emerald-600 text-emerald-700 bg-emerald-50'
-            : 'border-prussian text-prussian bg-white hover:bg-blue-50'
+            : 'border-prussian text-prussian bg-white hover:bg-purple-50'
         }`}
       >
         <AnimatePresence mode="wait">

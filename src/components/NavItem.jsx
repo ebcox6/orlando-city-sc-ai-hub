@@ -8,7 +8,7 @@ export default function NavItem({ to, icon, label, end }) {
       className={({ isActive }) =>
         `flex items-center gap-2.5 px-4 py-2.5 text-[13px] border-l-[3px] transition-all w-full font-nunito ${
           isActive
-            ? 'bg-blue-50 text-prussian font-semibold'
+            ? 'bg-purple-50 text-prussian font-semibold'
             : 'text-slate-500 border-l-transparent hover:bg-slate-50 hover:text-slate-800'
         }`
       }

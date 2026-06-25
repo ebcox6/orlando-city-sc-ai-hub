@@ -76,7 +76,7 @@ export default function Layout({ children }) {
 
           {/* Right */}
           <div className="flex items-center gap-3 flex-shrink-0">
-            <span className="bg-orange text-white text-[11px] font-bold px-3 py-1 rounded-full font-poppins whitespace-nowrap hidden md:inline">
+            <span className="bg-orange text-prussian text-[11px] font-bold px-3 py-1 rounded-full font-poppins whitespace-nowrap hidden md:inline">
               Work Smarter with AI
             </span>
             <button
@@ -194,7 +194,7 @@ export default function Layout({ children }) {
                               if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }, 200);
                           }}
-                          className="text-xs px-3 py-1 bg-blue-50 text-prussian rounded-full border border-blue-100 hover:bg-blue-100 transition-colors font-nunito"
+                          className="text-xs px-3 py-1 bg-purple-50 text-prussian rounded-full border border-purple-100 hover:bg-purple-100 transition-colors font-nunito"
                         >
                           {r.title}
                         </Link>

@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #001e62;
-  --color-accent:  #ef7225;
-  --color-link:    #006cff;
+  --color-primary: #633492;
+  --color-accent:  #FDE192;
+  --color-link:    #633492;
 }
 
 @theme {
-  /* Brand colors */
-  --color-prussian: #001e62;
-  --color-orange: #ef7225;
-  --color-dodger: #006cff;
+  /* Brand colors — Orlando City SC */
+  --color-prussian: #633492;
+  --color-orange: #FDE192;
+  --color-dodger: #633492;
 
   /* Font families — v4 naming: --font-{name} → font-{name} utility */
   --font-poppins: 'Poppins', sans-serif;
@@ -57,7 +57,7 @@ input:-webkit-autofill {
 }
 .fill-field:focus {
   border-bottom-color: var(--color-accent) !important;
-  background: rgba(0, 108, 255, 0.04);
+  background: rgba(99, 52, 146, 0.04);
   border-radius: 3px 3px 0 0;
 }
 .fill-field:focus::placeholder {
