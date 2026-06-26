@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AccordionSection from './AccordionSection';
 import { showToast } from './Toast';
 import agentTestPrompts from '../data/agentTestPrompts';
+import { config } from '../tenant.config';
 
 // ─── Static phase texts ───────────────────────────────────────────────────
 
@@ -21,18 +22,13 @@ const PHASE3_TEXT = `After producing your output, review it and tell me:
 // ─── Agent selector config ────────────────────────────────────────────────
 
 const SELECTOR_AGENTS = [
-  { id: 'agent-ticket-triage',     label: 'Ticket Triage',     division: 'MSP' },
-  { id: 'agent-qbr-prep',          label: 'QBR Prep',          division: 'MSP' },
-  { id: 'agent-client-comms',      label: 'Client Comms',      division: 'MSP' },
-  { id: 'agent-project-status',    label: 'Project Status',    division: 'ERP' },
-  { id: 'agent-discovery',         label: 'Discovery',         division: 'ERP' },
-  { id: 'agent-training-designer', label: 'Training Designer', division: 'ERP' },
+  { id: 'agent-sponsorship-strategy', label: 'Sponsorship Strategy', division: 'Partnerships & Brand Alliance' },
+  { id: 'agent-financial-analysis',   label: 'Financial Analysis',   division: 'Finance & FP&A' },
+  { id: 'agent-strategic-insight',    label: 'Strategic Insight',    division: 'Strategy & Analytics' },
+  { id: 'agent-contract-risk',        label: 'Contract & Risk',      division: 'Legal & Compliance' },
+  { id: 'agent-executive-briefing',   label: 'Executive Briefing',   division: 'Executive & Operations' },
+  { id: 'agent-it-governance',        label: 'IT Governance',        division: 'IT & Technology' },
 ];
-
-const DIVISION_PILL = {
-  MSP: { bg: '#dbeafe', color: '#1e40af' },
-  ERP: { bg: '#fef3c7', color: '#92400e' },
-};
 
 // ─── Build the full combined prompt ──────────────────────────────────────
 
@@ -302,7 +298,8 @@ export default function AgentTestSection({ sectionRef, selectedAgentId, onSelect
       <div className="grid grid-cols-3 gap-2 mb-4">
         {SELECTOR_AGENTS.map((agent) => {
           const isSelected = selectedAgentId === agent.id;
-          const pill = DIVISION_PILL[agent.division];
+          const pillMeta = config.divisionMeta[agent.division] || { bg: '#f1f5f9', accent: '#334155' };
+          const pill = { bg: pillMeta.bg, color: pillMeta.accent };
           return (
             <button
               key={agent.id}

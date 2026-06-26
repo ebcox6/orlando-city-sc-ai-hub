@@ -2,12 +2,7 @@ import { useState, useCallback } from 'react';
 import FillablePrompt from './FillablePrompt';
 import PromptActionButtons from './PromptActionButtons';
 import AccordionPromptCard from './AccordionPromptCard';
-
-const DIVISION_ACCENT = {
-  MSP:       { bg: '#eff6ff', border: '#bfdbfe', text: 'var(--color-primary)' },
-  ERP:       { bg: '#fff7ed', border: '#fed7aa', text: '#c2410c' },
-  Corporate: { bg: '#f0f9ff', border: '#bae6fd', text: '#0369a1' },
-};
+import { config } from '../tenant.config';
 
 function buildPromptText(template, fields, values) {
   let text = template;
@@ -57,7 +52,8 @@ function renderTemplate(template, fields, values, onChange) {
 
 // ─── Division + role + task badge row ────────────────────────────────────
 function DivisionBadges({ prompt }) {
-  const accent = DIVISION_ACCENT[prompt.division] || DIVISION_ACCENT.MSP;
+  const meta = config.divisionMeta[prompt.division] || { bg: '#f1f5f9', border: '#cbd5e1', accent: '#334155' };
+  const accent = { bg: meta.bg, border: meta.border, text: meta.accent };
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       <span

@@ -1,38 +1,17 @@
 import { motion } from 'framer-motion';
-
-// ─── Division colour map ──────────────────────────────────────────────────
-const DIVISION_META = {
-  MSP: {
-    label: 'MSP',
-    fullLabel: 'Managed Service Provider',
-    description: 'Help desk, account management, NOC, and client-facing IT support roles.',
-    emoji: '🖥️',
-    accent: 'var(--color-primary)',
-    bg: '#eff6ff',
-    border: '#bfdbfe',
-  },
-  ERP: {
-    label: 'ERP',
-    fullLabel: 'Enterprise Resource Planning',
-    description: 'ERP consulting, implementation, change management, and training roles.',
-    emoji: '⚙️',
-    accent: 'var(--color-accent)',
-    bg: '#fff7ed',
-    border: '#fed7aa',
-  },
-  Corporate: {
-    label: 'Corporate',
-    fullLabel: 'Corporate Operations',
-    description: 'HR, operations, project management, and cross-functional business roles.',
-    emoji: '🏢',
-    accent: 'var(--color-link)',
-    bg: '#f0f9ff',
-    border: '#bae6fd',
-  },
-};
+import { config } from '../tenant.config';
 
 export default function DivisionCard({ division, count, isActive, onClick }) {
-  const meta = DIVISION_META[division];
+  const style = config.divisionMeta[division] || { emoji: '📁', bg: '#f1f5f9', border: '#cbd5e1', accent: 'var(--color-primary)', description: '' };
+  const meta = {
+    label: division,
+    fullLabel: division,
+    description: style.description,
+    emoji: style.emoji,
+    accent: style.accent,
+    bg: style.bg,
+    border: style.border,
+  };
 
   return (
     <motion.button

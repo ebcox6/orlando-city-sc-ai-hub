@@ -3,76 +3,76 @@
 
 const agentTestPrompts = {
 
-  'agent-ticket-triage': {
-    phase2Label: 'Handle an incomplete ticket',
-    phase2: `A client just emailed: "Nothing is working and I need this fixed NOW." That is the entire message. Draft your first response and tell me what you would do next internally.`,
+  'agent-sponsorship-strategy': {
+    phase2Label: 'Pressure-test a live deal',
+    phase2: `We're three weeks from a kit sponsor renewal deadline. Our ask is a 15% increase based on three years of brand lift data and attendance growth. The sponsor's procurement lead has gone quiet for two weeks. Tell me how to read this and what I should prepare before the next call.`,
     whatToLookFor: [
-      'Empathetic but professional tone',
-      'Asks for details before promising resolution',
-      'Suggests internal escalation path',
-      'No promises on resolution time',
+      'Identifies the silence as a signal worth addressing, not just waiting out',
+      'Asks what data backs the 15% before accepting the number',
+      'Offers a structured way to re-engage, not just "follow up"',
+      'Flags the actual risk to the deal, not generic reassurance',
     ],
-    redFlag: 'Generic apology with no MSP-specific framing or escalation thinking',
+    redFlag: 'Generic sales advice with no engagement of the specific deal risk or data',
   },
 
-  'agent-qbr-prep': {
-    phase2Label: 'Build something under pressure',
-    phase2: `I have a QBR with a client in 48 hours. They have been with us for 3 years. I have not prepared anything yet. Build me a starting point.`,
+  'agent-financial-analysis': {
+    phase2Label: 'Defend a number under scrutiny',
+    phase2: `Ownership is questioning why matchday operations came in 8% over budget this quarter. I have the variance breakdown but the board meeting is in two days and I haven't structured the narrative yet.`,
     whatToLookFor: [
-      'Asks about client name or relationship priority first',
-      'Produces agenda with time allocations',
-      'Uses business value language, not technical',
-      'Includes next steps with owners',
+      "Asks what's driving the variance before structuring anything",
+      'Separates controllable from uncontrollable cost drivers',
+      'Produces a narrative ownership can act on, not just a number',
+      'Flags if a driver looks likely to recur next quarter',
     ],
-    redFlag: 'Generic QBR template with no i-Tech or MSP context',
+    redFlag: 'Generic budget-overrun template with no engagement of the actual drivers',
   },
 
-  'agent-client-comms': {
-    phase2Label: 'Navigate a difficult situation',
-    phase2: `A client just called my manager to complain that we have been slow to respond to their tickets for the past two weeks. My manager asked me to follow up directly. I need to send something today.`,
+  'agent-strategic-insight': {
+    phase2Label: 'Challenge a weak recommendation',
+    phase2: `Our analytics show season ticket renewal intent dropping among members who attended fewer than 5 matches last season. My instinct is to recommend a loyalty discount for low-attendance members. Tell me if that's actually the right move.`,
     whatToLookFor: [
-      'Asks one clarifying question about the relationship',
-      'Acknowledges without over-apologizing',
-      'Proposes one concrete next step',
-      'Subject line is direct, not defensive',
+      'Questions whether discounting is treating a symptom or the actual cause',
+      "Asks what's driving low attendance before recommending a fix",
+      'Identifies what decision this data should actually be driving',
+      "Doesn't just validate the instinct because it was offered first",
     ],
-    redFlag: 'Groveling email with promises about future response times',
+    redFlag: 'Agrees with the discount idea without examining whether it addresses the real problem',
   },
 
-  'agent-project-status': {
-    phase2Label: 'Report bad news clearly',
-    phase2: `My ERP project is two weeks behind and the client sponsor just asked for a written update. I have a call with her in 3 hours.`,
+  'agent-contract-risk': {
+    phase2Label: 'Flag risk before it ships',
+    phase2: `A proposed jersey sponsor agreement includes a clause letting the sponsor terminate for "reputational concern" at their sole discretion with 30 days notice. Legal review is due back to the business team today. Walk me through the exposure.`,
     whatToLookFor: [
-      'Asks what caused the delay before drafting',
-      'Flags risk clearly — does not soften it',
-      'Uses labeled sections with action items',
-      'Frames everything in business impact terms',
+      'Flags the subjectivity of "reputational concern" as the core risk, not just notes it exists',
+      'Identifies what one-sided termination rights actually expose the club to',
+      "Suggests what language would balance the risk, not just that it's risky",
+      "Doesn't soften the flag into a vague suggestion",
     ],
-    redFlag: 'Softened delay language or missing owner/task/date format',
+    redFlag: 'Acknowledges the clause without identifying why the lack of objective standard is the actual problem',
   },
 
-  'agent-discovery': {
-    phase2Label: 'Prepare with no prior knowledge',
-    phase2: `I have a discovery session tomorrow with a new client in the manufacturing space. I know almost nothing about their current systems yet.`,
+  'agent-executive-briefing': {
+    phase2Label: 'Synthesize conflicting inputs',
+    phase2: `I have three updates landing on my desk: Finance says we're over budget on operations, Partnerships says a major renewal is now at risk, and Strategy says renewal intent is dropping in a key member segment. The COO wants one page, today.`,
     whatToLookFor: [
-      'Organizes questions by business process area',
-      'Flags high-priority questions explicitly',
-      'Avoids ERP jargon the client may not know',
-      'Covers integration and reporting needs',
+      'Identifies whether these three threads are actually connected, not just lists them',
+      'Leads with what the COO needs to decide, not a summary of each department',
+      'Flags the tension or compounding risk across the three inputs',
+      'Stays within a genuinely one-page scope without padding',
     ],
-    redFlag: 'Random unstructured question list with no category grouping',
+    redFlag: 'Produces three separate summaries stapled together instead of one synthesized brief',
   },
 
-  'agent-training-designer': {
-    phase2Label: 'Design for a cold audience',
-    phase2: `I need to train 15 warehouse staff on how to receive purchase orders in the new system. They have never used ERP before. Training is Friday.`,
+  'agent-it-governance': {
+    phase2Label: 'Frame risk for a non-technical audience',
+    phase2: `We're evaluating an AI vendor for fan data analysis that would touch personal information from both club databases. Ownership wants a risk summary, but none of them are technical. I need this in business terms, not architecture diagrams.`,
     whatToLookFor: [
-      'Asks about the specific ERP module or steps',
-      'Produces numbered steps in plain language',
-      'Reading level is accessible, no jargon',
-      'Asks about audience comfort with technology',
+      'Translates technical risk into business and reputational terms immediately',
+      'Identifies the specific governance question ownership actually needs answered',
+      'Flags data-sharing across two club entities as its own distinct risk, not generic privacy language',
+      'Avoids technical jargon unless explicitly asked for deeper detail',
     ],
-    redFlag: 'Jargon-heavy content or unnumbered prose instructions',
+    redFlag: 'Defaults to technical security language that a non-technical executive would have to translate themselves',
   },
 };
 

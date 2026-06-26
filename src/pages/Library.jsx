@@ -108,11 +108,13 @@ export default function Library() {
   const filterBarRef = useRef(null);
 
   // ── Division card counts ─────────────────────────────────────────────
-  const countByDivision = useMemo(() => ({
-    MSP:       libraryPrompts.filter((p) => p.division === 'MSP').length,
-    ERP:       libraryPrompts.filter((p) => p.division === 'ERP').length,
-    Corporate: libraryPrompts.filter((p) => p.division === 'Corporate').length,
-  }), []);
+  const countByDivision = useMemo(() => {
+    const counts = {};
+    config.divisions.forEach((d) => {
+      counts[d] = libraryPrompts.filter((p) => p.division === d).length;
+    });
+    return counts;
+  }, []);
 
   // ── Dynamic role / task options based on selected division ───────────
   const roleOptions = useMemo(() => {
@@ -215,7 +217,7 @@ export default function Library() {
                 </span>
               </div>
               <p className="text-sm text-slate-500 font-nunito leading-relaxed max-w-xl">
-                Role-specific AI prompt templates for MSP, ERP, and Corporate teams.
+                Role-specific AI prompt templates for Orlando City SC and Orlando Pride teams.
                 Fill in the fields and copy your prompt — ready to use in ChatGPT, Claude, or any AI tool.
               </p>
             </div>

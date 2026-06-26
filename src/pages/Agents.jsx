@@ -7,6 +7,7 @@ import AgentCard from '../components/AgentCard';
 import AccordionSection from '../components/AccordionSection';
 import AgentTestSection from '../components/AgentTestSection';
 import { UNIVERSAL_STARTER, PLATFORM_GUIDES, agentPrompts } from '../data/agentPrompts';
+import { config } from '../tenant.config';
 
 // ─── Section header — orange small-caps with line rule ────────────────────
 function SectionHeader({ label }) {
@@ -184,9 +185,12 @@ function TestContent() {
   );
 }
 
-// ─── MSP and ERP agent lists — stable arrays defined outside component ────
-const MSP_AGENTS = agentPrompts.filter((p) => p.division === 'MSP');
-const ERP_AGENTS = agentPrompts.filter((p) => p.division === 'ERP');
+// ─── Agents grouped by division — stable, defined outside component ──────
+const AGENTS_BY_DIVISION = config.divisions.map((d) => ({
+  division: d,
+  meta: config.divisionMeta[d] || { accent: '#334155', bg: '#f1f5f9' },
+  agents: agentPrompts.filter((p) => p.division === d),
+}));
 
 // ─── Main page ────────────────────────────────────────────────────────────
 export default function Agents() {
@@ -251,59 +255,37 @@ export default function Agents() {
       ════════════════════════════════════════════════════════════════ */}
       <SectionHeader label="Role Starter Pack" />
       <p className="text-sm text-slate-500 font-nunito leading-relaxed mb-4">
-        Six pre-built agents for i-Tech roles. Each is ready to copy and install.
+        Six pre-built agents for Orlando City SC and Orlando Pride roles. Each is ready to copy and install.
         Customize the brackets to make it yours.
       </p>
 
-      {/* MSP agents */}
-      <div
-        className="text-[10px] font-bold tracking-widest uppercase font-poppins mb-2 flex items-center gap-2"
-        style={{ color: '#1e40af' }}
-      >
-        <span
-          className="px-2 py-0.5 rounded font-nunito"
-          style={{ background: '#dbeafe', color: '#1e40af', fontSize: '10px' }}
-        >
-          MSP
-        </span>
-        <span>Managed Service Provider</span>
-      </div>
-      <div className="flex flex-col gap-3 mb-5">
-        {MSP_AGENTS.map((p) => (
-          <AgentCard
-            key={p.id}
-            prompt={p}
-            isOpen={openAgentId === p.id}
-            onToggle={() => handleToggle(p.id)}
-            onGoToTest={handleGoToTest}
-          />
-        ))}
-      </div>
-
-      {/* ERP agents */}
-      <div
-        className="text-[10px] font-bold tracking-widest uppercase font-poppins mb-2 flex items-center gap-2"
-        style={{ color: '#92400e' }}
-      >
-        <span
-          className="px-2 py-0.5 rounded font-nunito"
-          style={{ background: '#fef3c7', color: '#92400e', fontSize: '10px' }}
-        >
-          ERP
-        </span>
-        <span>Enterprise Resource Planning</span>
-      </div>
-      <div className="flex flex-col gap-3 mb-8">
-        {ERP_AGENTS.map((p) => (
-          <AgentCard
-            key={p.id}
-            prompt={p}
-            isOpen={openAgentId === p.id}
-            onToggle={() => handleToggle(p.id)}
-            onGoToTest={handleGoToTest}
-          />
-        ))}
-      </div>
+      {AGENTS_BY_DIVISION.map(({ division, meta, agents }) => (
+        <div key={division}>
+          <div
+            className="text-[10px] font-bold tracking-widest uppercase font-poppins mb-2 flex items-center gap-2"
+            style={{ color: meta.accent }}
+          >
+            <span
+              className="px-2 py-0.5 rounded font-nunito"
+              style={{ background: meta.bg, color: meta.accent, fontSize: '10px' }}
+            >
+              {meta.emoji}
+            </span>
+            <span>{division}</span>
+          </div>
+          <div className="flex flex-col gap-3 mb-5">
+            {agents.map((p) => (
+              <AgentCard
+                key={p.id}
+                prompt={p}
+                isOpen={openAgentId === p.id}
+                onToggle={() => handleToggle(p.id)}
+                onGoToTest={handleGoToTest}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
 
       {/* ════════════════════════════════════════════════════════════════
           LAYER 2.5 — Test Your Agent

@@ -1,12 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import PromptActionButtons from './PromptActionButtons';
-
-// Division badge styles
-const DIVISION_BADGE = {
-  MSP: { bg: '#dbeafe', text: '#1e40af' },
-  ERP: { bg: '#fef3c7', text: '#92400e' },
-};
+import { config } from '../tenant.config';
 
 // ─── getText factory — stable per template ────────────────────────────────
 function makeGetText(template) {
@@ -61,7 +56,8 @@ function TestAgentCallout({ agentId, onGoToTest }) {
 
 // ─── Collapsed row ────────────────────────────────────────────────────────
 function CollapsedRow({ prompt, isOpen, onToggle }) {
-  const badge = DIVISION_BADGE[prompt.division] || DIVISION_BADGE.MSP;
+  const meta = config.divisionMeta[prompt.division] || { bg: '#f1f5f9', accent: '#334155' };
+  const badge = { bg: meta.bg, text: meta.accent };
 
   return (
     <button

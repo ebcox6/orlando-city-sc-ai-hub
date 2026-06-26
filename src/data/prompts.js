@@ -94,9 +94,7 @@ Include a clear call to action.`,
     id: 'uc-project',
     section: 'templates',
     title: 'Project Management',
-    tag: 'Ops / MSP',
-    tagColor: 'blue',
-    when: 'You need to plan a project, generate a checklist, create a timeline, or avoid common mistakes.',
+    tag: 'Ops',
     fields: [
       { id: 'f1', placeholder: 'project name', width: 200 },
       { id: 'f2', placeholder: 'planning / execution / evaluation', width: 240 },
@@ -183,9 +181,7 @@ Ask me one clarifying question at a time before proceeding.`,
     id: 'adv-workflow',
     section: 'advanced',
     title: 'Workflow Builder',
-    tag: 'Ops / MSP',
-    tagColor: 'blue',
-    when: 'You need to build a repeatable system, process, or plan that someone else can follow.',
+    tag: 'Ops',
     fields: [
       { id: 'f1', placeholder: 'describe the task or process', width: 300 },
     ],
@@ -241,12 +237,12 @@ Then give me an improved version based on that review.`,
     fields: [
       { id: 'f1', placeholder: 'describe the situation', width: 280 },
       { id: 'f2', placeholder: 'senior account manager / client success lead', width: 300 },
-      { id: 'f3', placeholder: 'managed services / technology', width: 240 },
-      { id: 'f4', placeholder: 'write a follow-up / draft a proposal / summarize the review', width: 320 },
+      { id: 'f3', placeholder: 'partnerships / fan experience / club operations', width: 280 },
+      { id: 'f4', placeholder: 'write a follow-up / draft a proposal / summarize the update', width: 320 },
       { id: 'f5', placeholder: 'professional email', width: 180 },
       { id: 'f6', placeholder: 'under 200 words', width: 140 },
       { id: 'f7', placeholder: 'empathetic and confident', width: 200 },
-      { id: 'f8', placeholder: 'non-technical business owner / C-level contact', width: 300 },
+      { id: 'f8', placeholder: 'partner contact / season ticket member', width: 280 },
     ],
     template: `Context: {f1}
 
@@ -262,19 +258,19 @@ Target Audience: {f8}`,
     id: 'craft-internal',
     section: 'craft',
     title: 'C.R.A.F.T. — Internal Communication',
-    tag: 'Ops / MSP',
+    tag: 'Ops',
     tagColor: 'blue',
     when: 'You need to communicate a policy update or announcement to your internal team clearly.',
     fields: [
       { id: 'f1', placeholder: 'describe what is changing or being announced', width: 320 },
-      { id: 'f2', placeholder: 'internal comms lead / operations manager', width: 280 },
+      { id: 'f2', placeholder: 'department lead / operations manager', width: 280 },
       { id: 'f3', placeholder: 'announcement / memo / update', width: 220 },
       { id: 'f4', placeholder: 'what is changing and what the team needs to do', width: 320 },
-      { id: 'f5', placeholder: 'internal support team / all staff', width: 260 },
+      { id: 'f5', placeholder: 'department staff / all staff', width: 260 },
     ],
     template: `Context: {f1}
 
-Role: Act as an {f2} at a technology services company.
+Role: Act as a {f2} at Orlando City SC.
 
 Action: Write an internal {f3} explaining {f4}.
 
@@ -285,21 +281,21 @@ Target Audience: {f5}`,
   {
     id: 'craft-summary',
     section: 'craft',
-    title: 'C.R.A.F.T. — Monthly Service Summary',
-    tag: 'Ops / MSP',
+    title: 'C.R.A.F.T. — Monthly Partnership Summary',
+    tag: 'Partnerships',
     tagColor: 'blue',
-    when: 'You need a professional client-facing report summarizing services, issues resolved, and recommendations.',
+    when: 'You need a professional summary for a partner or sponsor covering activations, performance, and recommendations.',
     fields: [
-      { id: 'f1', placeholder: 'client name', width: 180 },
+      { id: 'f1', placeholder: 'partner / sponsor name', width: 180 },
       { id: 'f2', placeholder: 'month or period', width: 180 },
       { id: 'f3', placeholder: '300', width: 60 },
-      { id: 'f4', placeholder: 'non-technical business owner', width: 240 },
+      { id: 'f4', placeholder: 'partner marketing contact', width: 240 },
     ],
     template: `Context: Providing {f1} with a monthly summary for {f2}.
 
-Role: Act as a senior technical account manager at a managed services company.
+Role: Act as a senior partnership manager at Orlando City SC.
 
-Action: Write a professional monthly service summary with key metrics, resolved issues, and next-month recommendations.
+Action: Write a professional monthly summary with key activation metrics, completed deliverables, and next-month recommendations.
 
 Format: Short report with clear sections, under {f3} words, professional tone.
 
@@ -344,8 +340,8 @@ Generate the final output. Then provide a brief self-evaluation checklist.`,
   {
     id: 'socratic-ops',
     section: 'socratic',
-    title: 'Socratic Prompt — Ops/MSP example',
-    tag: 'Ops / MSP',
+    title: 'Socratic Prompt — Operations example',
+    tag: 'Ops',
     tagColor: 'blue',
     when: 'You need a solid SOP, process document, or internal procedure your team can actually follow.',
     fields: [
@@ -370,14 +366,14 @@ Constraints: {f4}`,
   {
     id: 'socratic-client',
     section: 'socratic',
-    title: 'Socratic Prompt — Client facing example',
-    tag: 'Client facing',
+    title: 'Socratic Prompt — Partner facing example',
+    tag: 'Partnerships',
     tagColor: 'amber',
-    when: 'You need a proposal, upgrade pitch, or client recommendation that is well-reasoned and persuasive.',
+    when: 'You need a proposal, renewal pitch, or partner recommendation that is well-reasoned and persuasive.',
     fields: [
-      { id: 'f1', placeholder: 'Service proposal / upgrade pitch / recommendation', width: 300 },
+      { id: 'f1', placeholder: 'Sponsorship proposal / renewal pitch / recommendation', width: 320 },
       { id: 'f2', placeholder: 'describe what you are proposing', width: 300 },
-      { id: 'f3', placeholder: 'non-technical business owner / decision-maker', width: 300 },
+      { id: 'f3', placeholder: 'sponsor marketing lead / procurement decision-maker', width: 320 },
       { id: 'f4', placeholder: 'communicate value / make the decision easy', width: 300 },
       { id: 'f5', placeholder: 'length, tone, format', width: 220 },
     ],
@@ -427,17 +423,17 @@ STOP CONDITIONS: {f7}`,
   {
     id: 'anatomy-ops',
     section: 'anatomy',
-    title: 'Anatomy — Ops/MSP example',
-    tag: 'Ops / MSP',
+    title: 'Anatomy — Operations example',
+    tag: 'Ops',
     tagColor: 'blue',
-    when: 'You need a precise, structured output for an internal process, ticket, or operations document.',
+    when: 'You need a precise, structured output for an internal process, policy, or operations document.',
     fields: [
-      { id: 'f1', placeholder: 'create an escalation SOP / write a ticket response / draft a process doc', width: 380 },
-      { id: 'f2', placeholder: 'internal support team', width: 200 },
+      { id: 'f1', placeholder: 'create a gameday checklist / write a process doc / draft a policy', width: 380 },
+      { id: 'f2', placeholder: 'internal operations team', width: 200 },
       { id: 'f3', placeholder: 'numbered steps with role assignments', width: 280 },
       { id: 'f4', placeholder: '400', width: 60 },
     ],
-    template: `ROLE: Act as a senior IT operations manager with 10+ years of MSP experience.
+    template: `ROLE: Act as a senior operations manager with deep experience in club or event operations.
 
 TASK: {f1}
 
@@ -452,24 +448,24 @@ STOP CONDITIONS: Under {f4} words. No jargon. End with a summary line.`,
   {
     id: 'anatomy-client',
     section: 'anatomy',
-    title: 'Anatomy — Client facing example',
-    tag: 'Client facing',
+    title: 'Anatomy — Partner facing example',
+    tag: 'Partnerships',
     tagColor: 'amber',
-    when: 'You need a polished, precise client-facing document where tone, structure, and completeness all matter.',
+    when: 'You need a polished, precise partner-facing document where tone, structure, and completeness all matter.',
     fields: [
-      { id: 'f1', placeholder: 'write a QBR follow-up / draft a proposal / create a service summary', width: 380 },
-      { id: 'f2', placeholder: 'C-level, non-technical client', width: 240 },
+      { id: 'f1', placeholder: 'write a renewal follow-up / draft a proposal / create an activation summary', width: 400 },
+      { id: 'f2', placeholder: 'sponsor marketing lead, non-technical decision-maker', width: 320 },
       { id: 'f3', placeholder: 'reinforce confidence and outline next steps', width: 300 },
       { id: 'f4', placeholder: 'professional email with bullet action items', width: 280 },
       { id: 'f5', placeholder: '250', width: 60 },
     ],
-    template: `ROLE: Act as a senior client success manager at a managed services company.
+    template: `ROLE: Act as a senior partnership manager at Orlando City SC.
 
 TASK: {f1}
 
 CONTEXT: Audience: {f2} | Goal: {f3} | Tone: professional and empathetic
 
-REASONING: Lead with what matters most to the client. Be concise.
+REASONING: Lead with what matters most to the partner. Be concise.
 
 OUTPUT FORMAT: {f4}
 

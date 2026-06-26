@@ -16,13 +16,13 @@ const fadeUp = {
 
 // ─── Role-specific pill data keyed by audience ───────────────────────────
 const PATH_DATA = {
-  msp: {
-    newbie:  ['Ticket Templates', 'Client Comms', 'Prof. Synapse'],
-    builder: ['Ticket Triage Agent', 'QBR Prep Agent', 'Client Comms Agent'],
+  partnerships: {
+    newbie:  ['Renewal Pressure Test', 'Activation Recap', 'Prof. Synapse'],
+    builder: ['Sponsorship Strategy Assistant'],
   },
-  erp: {
-    newbie:  ['Status Reports', 'Socratic Prompting', 'C.R.A.F.T.'],
-    builder: ['Project Status Agent', 'Discovery Agent', 'Training Designer'],
+  finance: {
+    newbie:  ['Variance Narrative', 'Socratic Prompting', 'C.R.A.F.T.'],
+    builder: ['Financial Analysis Assistant'],
   },
   general: {
     newbie:  ['Use Case Templates', 'Prof. Synapse', 'Advanced Prompts'],
@@ -33,40 +33,40 @@ const PATH_DATA = {
 // ─── Audience card configs ─────────────────────────────────────────────────
 const AUDIENCE_CARDS = [
   {
-    key:          'msp',
+    key:          'partnerships',
     Icon:         Monitor,
     iconColor:    'var(--color-primary)',
     accent:       'var(--color-primary)',
-    accentFaded:  'rgba(0,30,98,0.4)',
-    shadowFaint:  'rgba(0,30,98,0.20)',
-    hoverShadow:  '0 4px 16px rgba(0,30,98,0.10)',
-    title:        'MSP / Technology Teams',
-    description:  'Managed service providers, IT support teams, and technology consultants. Prompts and agents built around tickets, client communication, QBRs, and service delivery.',
-    tags:         ['Ticket Triage', 'QBR Prep', 'Client Comms'],
+    accentFaded:  'rgba(99,52,146,0.4)',
+    shadowFaint:  'rgba(99,52,146,0.20)',
+    hoverShadow:  '0 4px 16px rgba(99,52,146,0.10)',
+    title:        'Partnerships & Brand Alliance',
+    description:  'Partnership development, brand alliance marketing, and global partnerships teams. Prompts and agents built around sponsorship strategy, renewal positioning, and activation ROI.',
+    tags:         ['Sponsorship Strategy', 'Renewal Pressure Test', 'Activation ROI'],
   },
   {
-    key:          'erp',
+    key:          'finance',
     Icon:         Database,
     iconColor:    'var(--color-accent)',
     accent:       'var(--color-accent)',
-    accentFaded:  'rgba(239,114,37,0.4)',
-    shadowFaint:  'rgba(239,114,37,0.20)',
-    hoverShadow:  '0 4px 16px rgba(239,114,37,0.15)',
-    title:        'ERP / Project Teams',
-    description:  'ERP consultants, project managers, and implementation teams. Prompts and agents built around status reporting, client updates, discovery, and training delivery.',
-    tags:         ['Project Status', 'Discovery', 'Training Design'],
+    accentFaded:  'rgba(253,225,146,0.6)',
+    shadowFaint:  'rgba(253,225,146,0.3)',
+    hoverShadow:  '0 4px 16px rgba(253,225,146,0.2)',
+    title:        'Finance, FP&A & Accounting',
+    description:  'Finance, FP&A, and accounting leadership. Prompts and agents built around variance analysis, scenario modeling, and board-ready financial narratives.',
+    tags:         ['Variance Narrative', 'Scenario Stress Test', 'Financial Analysis'],
   },
   {
     key:          'general',
     Icon:         Users,
     iconColor:    'var(--color-link)',
     accent:       'var(--color-link)',
-    accentFaded:  'rgba(0,108,255,0.4)',
-    shadowFaint:  'rgba(0,108,255,0.20)',
-    hoverShadow:  '0 4px 16px rgba(0,108,255,0.12)',
-    title:        'General Business / Education',
-    description:  'Business teams, school administrators, and educators. Prompts and agents built around communication, planning, documentation, and professional development — for any role, any industry.',
-    tags:         ['Content Creation', 'Planning', 'Team Comms'],
+    accentFaded:  'rgba(99,52,146,0.4)',
+    shadowFaint:  'rgba(99,52,146,0.20)',
+    hoverShadow:  '0 4px 16px rgba(99,52,146,0.12)',
+    title:        'Strategy, Legal, Ops & IT',
+    description:  'Strategy & Analytics, Legal & Compliance, Executive & Operations, and IT & Technology teams. Prompts and agents built around decision support, risk review, briefings, and governance.',
+    tags:         ['Strategic Insight', 'Contract Risk', 'Executive Briefing'],
   },
 ];
 
