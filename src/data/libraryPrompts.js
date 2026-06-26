@@ -51,6 +51,42 @@ Before I send this, identify the single weakest point in my rationale, the one a
 Build the recap as a decision-ready narrative, not a data dump. Lead with what the numbers mean for the partner's objectives, not just what happened. Flag any metric that's weaker than it looks on the surface, and tell me how to frame it honestly without undermining the renewal case.`,
   },
 
+  {
+    id: 'partnerships-content-calendar',
+    division: 'Partnerships & Brand Alliance',
+    role: 'Brand Alliance Marketing',
+    task: 'Content Planning',
+    title: 'Content Calendar Sprint — Build a social/content plan around a key date',
+    when: 'You have an upcoming match, activation, or sponsor moment and need a tight social/content calendar built around it fast.',
+    fields: [
+      { key: 'event',     placeholder: 'the match, activation, or key date' },
+      { key: 'goal',      placeholder: 'what this content push needs to accomplish' },
+      { key: 'platforms', placeholder: 'platforms in scope (e.g. Instagram, X, TikTok)' },
+    ],
+    template:
+`We have {event} coming up. The content push needs to accomplish: {goal}. Platforms in scope: {platforms}.
+
+Build a content calendar covering the lead-up, the day itself, and the follow-up. For each post, give me the angle and platform, not just a generic content idea. Flag if any sponsor or partner obligation should be reflected in the calendar. Don't pad this with filler posts — every entry should earn its place.`,
+  },
+
+  {
+    id: 'partnerships-matchday-comms',
+    division: 'Partnerships & Brand Alliance',
+    role: 'Brand Alliance Marketing',
+    task: 'Content Drafting',
+    title: 'Match Day Comms Draft — Press release or recap, fast turnaround',
+    when: 'You need a press release, match recap, or fan-facing announcement drafted quickly and in the club’s voice.',
+    fields: [
+      { key: 'subject',  placeholder: 'what this is announcing or recapping' },
+      { key: 'keyFacts', placeholder: 'the key facts, score, or details to include' },
+      { key: 'tone',     placeholder: 'tone (e.g. celebratory, measured, urgent)' },
+    ],
+    template:
+`Draft a press release or match recap on: {subject}. Key facts to include: {keyFacts}. Tone: {tone}.
+
+Lead with what a fan or reporter actually wants to know first, not background context. Keep it tight and scannable. Flag if any of the facts I've given you would benefit from a quote or additional context I haven't provided, rather than inventing one.`,
+  },
+
   // ──────────────────────────────────────────────────────────────────────────
   // FINANCE & FP&A
   // ──────────────────────────────────────────────────────────────────────────
