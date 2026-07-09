@@ -6,7 +6,7 @@ import App from './App.jsx';
 
 const router = createBrowserRouter(
   [{ path: '*', element: <App /> }],
-  { basename: '/orlando-city-sc-ai-hub/' }
+  { basename: import.meta.env.BASE_URL }
 );
 
 createRoot(document.getElementById('root')).render(
