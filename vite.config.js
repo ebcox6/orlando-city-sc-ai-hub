@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/orlando-city-sc-ai-hub/',
+  base: '/',
   plugins: [react(), tailwindcss()],
 })
