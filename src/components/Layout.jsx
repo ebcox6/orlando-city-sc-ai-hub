@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { to: '/library',  icon: <BookOpen size={15} />,   label: 'Prompt Library' },
   { to: '/agents',   icon: <Bot size={15} />,        label: 'Build Your Agent' },
   { to: '/favorites',icon: '❤️',                     label: 'Favorites' },
+  { to: '/fun',      icon: '⚽',                      label: 'Fun with AI' },
 ];
 
 export default function Layout({ children }) {

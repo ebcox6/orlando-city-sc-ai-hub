@@ -471,6 +471,118 @@ OUTPUT FORMAT: {f4}
 
 STOP CONDITIONS: Under {f5} words. No jargon. End with one clear call to action.`,
   },
+
+
+  // ─── FUN WITH AI ─────────────────────────────────────────────────
+  {
+    id: 'fun-walkout-dj',
+    section: 'fun',
+    group: 'matchday',
+    title: 'Pick the walk-out song',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Giving the AI a role and a setting sharpens the answer.',
+    fields: [
+      { id: 'f1', placeholder: 'opponent', width: 160 },
+    ],
+    template: `You are a matchday DJ for Orlando City SC. Suggest 5 walk-out songs for a Friday night home match against {f1}, with one sentence on why each fits the energy of the crowd.`,
+  },
+  {
+    id: 'fun-chant',
+    section: 'fun',
+    group: 'matchday',
+    title: 'Chant generator',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Limits like 4 lines and easy to sing shape the result.',
+    fields: [
+      { id: 'f1', placeholder: 'player name', width: 180 },
+    ],
+    template: `Write a short, family-friendly Orlando City SC crowd chant about {f1}. Keep it to 4 lines and easy to sing.`,
+  },
+  {
+    id: 'fun-hype-text',
+    section: 'fun',
+    group: 'matchday',
+    title: 'The morning hype text',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Telling the AI who it is speaking as changes the voice.',
+    fields: [],
+    template: `Write a 2-sentence hype text to send season ticket holders the morning of a big match. Make it feel like it is from a friend, not a brand.`,
+  },
+  {
+    id: 'fun-snack',
+    section: 'fun',
+    group: 'food-promos',
+    title: 'Invent a stadium snack',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'A few clear constraints produce a usable idea, not a vague one.',
+    fields: [],
+    template: `Invent a purple-and-gold themed stadium snack for Orlando City SC. Give it a fun name, describe it in 2 sentences, and suggest a price.`,
+  },
+  {
+    id: 'fun-promo-night',
+    section: 'fun',
+    group: 'food-promos',
+    title: 'Promo night brainstorm',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Naming the audience changes everything the AI suggests.',
+    fields: [
+      { id: 'f1', placeholder: 'families with kids under 12', width: 280 },
+    ],
+    template: `Give me 5 themed promo night ideas for an Orlando City SC home match that would appeal to {f1}.`,
+  },
+  {
+    id: 'fun-rivalry-post',
+    section: 'fun',
+    group: 'rivalry',
+    title: 'Good-natured trash talk',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: "A guardrail like 'nothing mean' keeps the AI in bounds.",
+    fields: [
+      { id: 'f1', placeholder: 'Inter Miami', width: 180 },
+    ],
+    template: `Write a playful, good-natured social post hyping Orlando City SC before a match against {f1}. Nothing mean, just confident and fun.`,
+  },
+  {
+    id: 'fun-wc-convert',
+    section: 'fun',
+    group: 'world-cup',
+    title: 'Convert the new fan',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Tying a prompt to a real moment makes the output land.',
+    fields: [],
+    template: `The World Cup is happening in the US right now. Write a short, friendly message inviting someone who just discovered soccer this summer to come to their first Orlando City SC match.`,
+  },
+  {
+    id: 'fun-wc-bracket',
+    section: 'fun',
+    group: 'world-cup',
+    title: 'Watercooler bracket banter',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'The AI sounds sure of itself. You still make the call.',
+    fields: [],
+    template: `Predict which team wins the 2026 World Cup and give me one funny, confident sentence I could say at the watercooler to defend the pick.`,
+  },
+  {
+    id: 'fun-try-twice',
+    section: 'fun',
+    group: 'try-twice',
+    title: 'Run this one two ways',
+    tag: 'Fun',
+    tagColor: 'purple',
+    when: 'Run it once as is. Then add "make it funny" or "make it emotional" at the end. One added instruction changes the whole result. That is prompting.',
+    fields: [
+      { id: 'f1', placeholder: 'player name', width: 180 },
+    ],
+    template: `Write a crowd chant about {f1} for Orlando City SC.`,
+  },
 ];
 
 export const sections = [
@@ -480,6 +592,7 @@ export const sections = [
   { id: 'craft', label: 'C.R.A.F.T. Framework', icon: '✍️', path: '/craft' },
   { id: 'socratic', label: 'Socratic Prompting', icon: '🔍', path: '/socratic' },
   { id: 'anatomy', label: 'Anatomy of a Prompt', icon: '🔬', path: '/anatomy' },
+  { id: 'fun', label: 'Fun with AI', icon: '⚽', path: '/fun' },
 ];
 
 export const getPromptById = (id) => prompts.find((p) => p.id === id);

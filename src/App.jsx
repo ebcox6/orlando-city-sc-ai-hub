@@ -15,6 +15,7 @@ import Library from './pages/Library';
 import Agents from './pages/Agents';
 import Welcome from './pages/Welcome';
 import Frameworks from './pages/Frameworks';
+import Fun from './pages/Fun';
 import Toast from './components/Toast';
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/agents"   element={<Agents />} />
           <Route path="/welcome"     element={<Welcome />} />
           <Route path="/frameworks"  element={<Frameworks />} />
+          <Route path="/fun"         element={<Fun />} />
         </Routes>
       </AnimatePresence>
     </Layout>
